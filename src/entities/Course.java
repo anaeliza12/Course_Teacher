@@ -7,13 +7,15 @@ public class Course {
 
 	private Teacher teacher;
 	private String name;
+
 	private Set<Student> students;
 
-	public Course(Teacher teacher,  String name) {
+	public Course(Teacher teacher, String name) {
 
 		students = new HashSet<>();
 		this.teacher = teacher;
 		this.name = name;
+
 	}
 
 	public Teacher getTeacher() {
@@ -26,9 +28,11 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [teacher=" + teacher + ", students=" + students + "]";
+		return name;
 	}
-	
-	
+
+	public String getName() {
+		return name;
+	}
 
 }

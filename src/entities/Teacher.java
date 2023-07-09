@@ -6,7 +6,7 @@ import java.util.List;
 public class Teacher {
 	private String name;
 	private int Id;
-	
+
 	List<Course> courses;
 
 	public Teacher(String name) {
@@ -23,15 +23,13 @@ public class Teacher {
 		return Id;
 	}
 
+	public void addCourse(Course course) {
+		courses.add(course);
+
+	}
+
 	public List<Course> getCourses() {
 		return courses;
 	}
 
-	public void addCourses(List<Course> courses) {
-		this.courses = courses;
-	}
-	
-	
-
-	
 }
