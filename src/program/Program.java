@@ -17,7 +17,6 @@ public class Program {
 		Course B = new Course(teacher, "B");
 		Course C = new Course(teacher, "C");
 
-
 		teacher.addCourse(A);
 		teacher.addCourse(B);
 		teacher.addCourse(C);
@@ -26,20 +25,20 @@ public class Program {
 		do {
 
 			try {
-				
-				choice = Integer.parseInt(JOptionPane.showInputDialog(null, u.menu(), JOptionPane.ERROR_MESSAGE));
+
+				choice = Integer.parseInt(JOptionPane.showInputDialog(null, u.menu()));
 				switch (choice) {
-				
+
 				case 1:
 					registration(teacher);
 					break;
-					
+
 				case 2:
 					JOptionPane.showMessageDialog(null, u.total(teacher));
 					break;
 				}
-			}catch(NumberFormatException e) {
-				JOptionPane.showMessageDialog(null, "Informe apenas os números presentes");
+			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Enter only avaible numbers.");
 			}
 
 		} while (choice != 3);
@@ -51,7 +50,7 @@ public class Program {
 		String course = JOptionPane.showInputDialog(null, "Availble courses: " + u.coursesAvailble(teacher));
 		Course aux = u.checkCourses(teacher.getCourses(), course);
 		if (aux == null) {
-			JOptionPane.showMessageDialog(null, "Inform an availble course");
+			JOptionPane.showMessageDialog(null, "Enter an availble course");
 		} else {
 			u.addStudentCourse(student, u.checkCourses(teacher.getCourses(), course));
 			u.addCourseStudent(student, aux);
